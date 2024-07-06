@@ -6,10 +6,9 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
-import { FontAwesome5,MaterialCommunityIcons } from "@expo/vector-icons"; // Import FontAwesome5 from Expo vector icons
-import Row from "../../components/Row";
-import calculator, { initialState } from "../../components/calculator";
-
+import { FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons"; // Import FontAwesome5 from Expo vector icons
+import Row from "../../../components/Row";
+import calculator, { initialState } from "../../../components/calculator";
 
 export default class App extends Component {
   state = initialState;
@@ -22,8 +21,11 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <MaterialCommunityIcons
-        style={{ position: "absolute", top: 0, alignSelf: "center"}}
-        size={310} name="calculator-variant" color={"white"}  />
+          style={{ position: "absolute", top: 0, alignSelf: "center" }}
+          size={310}
+          name="calculator-variant"
+          color={"white"}
+        />
         <SafeAreaView>
           <Text style={styles.value}>
             {parseFloat(this.state.currentValue).toLocaleString()}

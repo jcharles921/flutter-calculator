@@ -3,6 +3,9 @@ import React from "react";
 import { Ionicons,MaterialIcons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
+import TabTwoScreen from "@/app/(drawer)/(tabs)/explore";
+import HomeScreen from "@/app/(drawer)/(tabs)";
+
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();

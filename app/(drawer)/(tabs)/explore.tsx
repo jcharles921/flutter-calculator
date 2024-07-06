@@ -1,23 +1,44 @@
 import { FontAwesome } from "@expo/vector-icons";
 import { StyleSheet, View } from "react-native";
-
+import { Ionicons } from "@expo/vector-icons";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { TextInput, Button } from "react-native-paper";
+import { useNavigation } from 'expo-router';
+import { DrawerActions } from '@react-navigation/native';
+type DrawerParamList = {
+  // Define your drawer screens here
+  TabTwo: undefined;
+  // ... other screens
+};
 
-export default function TabTwoScreen({ navigation }: { navigation: any }) {
+
+export default function TabTwoScreen() {
+  const navigation = useNavigation();
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#D0D0D0", dark: "#353636" }}
       headerImage={
-        <FontAwesome size={310} name="address-card-o" style={styles.headerImage} />
+        <FontAwesome
+          size={310}
+          name="address-card-o"
+          style={styles.headerImage}
+        />
       }
-    
     >
+      <Ionicons
+        style={{
+          position: "absolute",
+          top: 80,
+          left: 25,
+        }}
+        name="menu"
+        color={"white"}
+        size={24}
+      />
       <ThemedText type="title">Create an Account !</ThemedText>
       <View style={styles.formContainer}>
         <TextInput
-          
           label="Username"
           mode="outlined"
           style={styles.input}

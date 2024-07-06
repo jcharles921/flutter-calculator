@@ -7,10 +7,10 @@ import Animated, {
   useAnimatedStyle,
   useScrollViewOffset,
 } from "react-native-reanimated";
-import { Ionicons } from "@expo/vector-icons";
+
 import { ThemedView } from "@/components/ThemedView";
 import { useNavigation, DrawerActions } from "@react-navigation/native";
-import DrawerLayout from "./DrawerLayout";
+
 const HEADER_HEIGHT = 250;
 
 type Props = PropsWithChildren<{
@@ -28,9 +28,7 @@ export default function ParallaxScrollView({
   const scrollOffset = useScrollViewOffset(scrollRef);
   const navigation = useNavigation();
 
-  const openDrawer = () => {
-    navigation.dispatch(DrawerActions.openDrawer());
-  };
+
 
   const headerAnimatedStyle = useAnimatedStyle(() => {
     return {
@@ -63,18 +61,8 @@ export default function ParallaxScrollView({
             headerAnimatedStyle,
           ]}
         >
-          <Ionicons
-            onPress={openDrawer}
-            style={{
-              position: "absolute",
-              top: 80,
-              left: 25,
-            }}
-            name="menu"
-            color={"white"}
-            size={24}
-          />
           {headerImage}
+
         </Animated.View>
 
         <ThemedView style={styles.content}>{children}</ThemedView>
